@@ -1,7 +1,7 @@
 FROM alpine
-RUN apk add --no-cache openssh-client \
-    && mkdir .ssh \
-    && chmod 700 .ssh \
+apk add --no-cache openssh-client \
+    && mkdir /root/.ssh \
+    && chmod 700 /root/.ssh \
     && ssh-keyscan github.com >> /root/.ssh/known_hosts \
     && apk add --no-cache git
 LABEL io.whalebrew.name git 
